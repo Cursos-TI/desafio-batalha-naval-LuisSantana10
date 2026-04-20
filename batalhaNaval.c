@@ -9,34 +9,61 @@ int main() {
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
-    char  linha[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
-    int tabuleiro[10][10] = {
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-    };
 
+    int tabuleiro[10][10] = {0};
+
+    //Y: reta vertical, X: reta horizontal
+
+    //Primeiro navio
+    int navio1_y = 6, navio1_x = 1;
+
+    //Segundo navio
+    int navio2_y = 4, navio2_x = 5;
+
+    //Posicionamento dos navios
+    //Primeiro navio
+    for (int i = 0; i < 3; i++)
+    {
+        tabuleiro[navio1_y + i][navio1_x] = 1;
+    }
+
+    //Segundo navio
+    for (int i = 0; i < 4; i++)
+    {
+        tabuleiro[navio2_y][navio2_x + i] = 2;
+    }
+
+    //Tabuleiro
     printf("*** Batalha Naval ***\n");
     printf("  ");
-    //linha horizontal das letras
-    for (int i = 0; i < 10; i++)
-    {
-        printf("%c ", linha[i]);
-    }
 
-    //linha vertical dos números
+    //Números horizontais
     for (int j = 0; j < 10; j++)
     {
-        printf("%d\n", j);
+        printf("%d ", j);
     }
+    printf("\n");
+    
+    //Letras
+    for (int i = 0; i < 10; i++){
+        printf("%c ", 'A' + i);
 
+        for (int j = 0; j < 10; j++){
+            if (tabuleiro[i][j] == 0)
+            {
+                printf("~ ");
+            } else if (tabuleiro[i][j] == 1)
+            {
+                printf("1 ");
+            } else{
+                printf("2 ");
+            } 
+        }
+        printf("\n");
+    }
+    
+    
+    
 
 
 
