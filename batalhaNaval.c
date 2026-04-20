@@ -61,21 +61,6 @@ int main() {
         }
         printf("\n");
     }
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
